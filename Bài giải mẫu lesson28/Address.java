@@ -2,7 +2,7 @@
  * lớp mô tả thông tin địa chỉ của ai đó
  *
  * @author Branium Academy
- * * @website: https://braniumacademy.net
+ * @website: https://braniumacademy.net
  */
 public class Address {
     // các thuộc tính:
