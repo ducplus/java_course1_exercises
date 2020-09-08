@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * @author Branium Academy
+ * @website: https://braniumacademy.net
+ */
+ 
 public class L27Ex3 {
     public static void main(String[] args) {
         // giả định nhập chuẩn thông tin:
