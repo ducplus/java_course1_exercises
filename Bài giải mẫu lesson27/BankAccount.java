@@ -43,14 +43,12 @@ public class BankAccount {
         return false; // rút thất bại
     }
 
-    // chuyển khoản, giả định chỉ chuyển trong nội bộ ngân hàng
-    // nếu chuyển ngoại tuyến thêm các thông tin khác vào
-    public boolean bankTransfer(BankAccount acc, long amount) {
-        // nếu khớp tên tài khoản, số tài khoản, số tiền cần chuyển hợp lệ
-        if (0 < amount && amount < ballance
-                && acc.accNumber.compareTo(accNumber) == 0
-                && owner.compareTo(acc.owner) == 0) {
-            ballance -= amount;
+    // chuyển khoản từ tài khoản nguồn(hiện tại) sang tài khoản đích(tk nhận)
+    public boolean bankTransfer(BankAccount other, long amount) {
+        // nếu số tiền cần chuyển hợp lệ
+        if (0 < amount && amount < ballance) {
+            ballance -= amount; // giảm số tiền ở Tk hiện thời
+            other.ballance += amount; // tăng số tiền ở tk đích
             return true; // chuyển khoản thành công
         }
         return false; // chuyển khoản thất bại
