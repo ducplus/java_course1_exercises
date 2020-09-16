@@ -177,6 +177,12 @@ public class L35Ex2 {
         } while (choice != 0);
     }
 
+    /**
+     * phương thức nhập và tạo mới tài khoản ngân hàng
+     *
+     * @param input đối tượng của lớp Scanner
+     * @return tài khoản vừa tạo
+     */
     private static BankAccount createNewAcc(Scanner input) {
         System.out.println("Nhập mã tài khoản: ");
         var id = input.nextLine();
