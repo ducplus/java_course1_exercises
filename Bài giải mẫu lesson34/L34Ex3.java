@@ -1,5 +1,3 @@
-package net.braniumacademy.exercises_lesson35.ex3;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,7 +8,7 @@ import java.util.Scanner;
  * @website: https://braniumacademy.net
  */
 
-public class L35Ex3 {
+public class L34Ex3 {
     public static void main(String[] args) {
         int choice = 0;
         ArrayList<Subject> subjects = new ArrayList<>();
