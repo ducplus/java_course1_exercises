@@ -18,7 +18,7 @@ public class L35Ex1 {
         do {
             System.out.println("============== MENU ==============");
             System.out.println("1. Thêm mới 1 nhân viên");
-            System.out.println("2. Hiển thị thông tin nhân viên ra màn hình");
+            System.out.println("2. Hiển thị thông tin nhân viên");
             System.out.println("3. Tìm nhân viên theo tên");
             System.out.println("4. Xóa nhân viên theo mã cho trước");
             System.out.println("0. Thoát chương trình");
@@ -46,7 +46,8 @@ public class L35Ex1 {
                             System.out.println("==> Tìm thấy " + result.size() + " kết quả <==");
                             showEmployees(result);
                         } else {
-                            System.out.println("==> Không tìm thấy nhân viên nào tên \"" + name + "\" <==");
+                            System.out.println(
+                                    "==> Không tìm thấy nhân viên nào tên \"" + name + "\" <==");
                         }
                     } else {
                         System.out.println("==> Danh sách nhân viên rỗng <==");
@@ -68,7 +69,7 @@ public class L35Ex1 {
                     }
                     break;
                 default:
-                    System.out.println("==> Sai chức năng, vui lòng chọn lại <==");
+                    System.out.println("==>Sai chức năng, vui lòng chọn lại <==");
                     break;
             }
         } while (choice != 0);
@@ -99,7 +100,8 @@ public class L35Ex1 {
      * @param name      tên cần tìm
      * @return danh sách kết quả tìm kiếm
      */
-    private static ArrayList<Employee> searchByName(ArrayList<Employee> employees, String name) {
+    private static ArrayList<Employee> searchByName(
+            ArrayList<Employee> employees, String name) {
         ArrayList<Employee> res = new ArrayList<>();
         for (var emp : employees) {
             var firstName = getFirstName(emp.getFullName());
@@ -131,7 +133,8 @@ public class L35Ex1 {
         if (employees.size() > 0) {
             System.out.println("==> Danh sách nhân viên <==");
             System.out.printf("%-12s%-25s%-15s%-10s%-15s%-15s%-15s\n",
-                    "Mã NV", "Tên NV", "Địa chỉ", "Tuổi", "Số ĐT", "Lương", "Kinh nghiệm");
+                    "Mã NV", "Tên NV", "Địa chỉ",
+                    "Tuổi", "Số ĐT", "Lương", "Kinh nghiệm");
             for (var emp : employees) {
                 showEmp(emp);
             }

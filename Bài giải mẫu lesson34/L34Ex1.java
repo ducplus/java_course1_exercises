@@ -16,7 +16,7 @@ public class L34Ex1 {
         do {
             System.out.println("============== MENU ==============");
             System.out.println("1. Thêm mới 1 nhân viên");
-            System.out.println("2. Hiển thị thông tin nhân viên ra màn hình");
+            System.out.println("2. Hiển thị thông tin nhân viên");
             System.out.println("3. Tìm nhân viên theo tên");
             System.out.println("4. Xóa nhân viên theo mã cho trước");
             System.out.println("0. Thoát chương trình");
