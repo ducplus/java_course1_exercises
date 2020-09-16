@@ -44,7 +44,7 @@ public class L34Ex1 {
                             System.out.println("==> Tìm thấy " + result.size() + " kết quả <==");
                             showEmployees(result);
                         } else {
-                            System.out.println("Không tìm thấy nhân viên nào tên\"" + name + "\"");
+                            System.out.println("==> Không tìm thấy nhân viên nào tên\"" + name + "\" <==");
                         }
                     } else {
                         System.out.println("==> Danh sách nhân viên rỗng <==");
@@ -66,7 +66,7 @@ public class L34Ex1 {
                     }
                     break;
                 default:
-                    System.out.println("==>Sai chức năng, vui lòng chọn lại <==");
+                    System.out.println("==> Sai chức năng, vui lòng chọn lại <==");
                     break;
             }
         } while (choice != 0);
