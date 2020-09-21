@@ -1,4 +1,4 @@
-package net.braniumacademy.exercises_lesson35.ex3;
+package net.braniumacademy.exercises_lesson35.ex3.run;
 
 import java.util.ArrayList;
 import java.util.Scanner;
