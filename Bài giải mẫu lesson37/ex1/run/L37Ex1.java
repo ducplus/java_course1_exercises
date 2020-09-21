@@ -180,6 +180,7 @@ public class L37Ex1 {
         ArrayList<Employee> employees = new ArrayList<>();
         var file = new File(fileName);
         try {
+            file.createNewFile(); // tránh lỗi khi file không tồn tại
             var input = new Scanner(file);
             while (input.hasNextLine()) {
                 var id = input.nextLine();
@@ -194,7 +195,7 @@ public class L37Ex1 {
                 employees.add(employee);
             }
             input.close();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
