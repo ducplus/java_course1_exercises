@@ -1,14 +1,11 @@
 package net.braniumacademy.exercises_lesson37.ex2.run;
 
-import net.braniumacademy.exercises_lesson37.ex1.Employee;
 import net.braniumacademy.exercises_lesson37.ex2.BankAccount;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
-import static java.lang.System.in;
 import static java.lang.System.out;
 
 /**
