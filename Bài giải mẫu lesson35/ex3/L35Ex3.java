@@ -41,7 +41,7 @@ public class L35Ex3 {
                 case 1:
                     var s = createNewSubject(input);
                     subjects.add(s);
-                    System.out.println("==> Thêm tài khoản thành công! <==");
+                    System.out.println("==> Thêm môn học thành công! <==");
                     break;
                 case 2:
                     var student = createNewStudent(input);
