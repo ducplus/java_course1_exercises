@@ -233,11 +233,11 @@ public class L37Ex2 {
             FileWriter fileWriter = new FileWriter(fileName, true);
             PrintWriter printWriter = new PrintWriter(fileWriter);
             for (int i = 0; i < accounts.size(); i++) {
-                var emp = accounts.get(i);
-                if (!isExist(currentInFile, emp)) {
-                    printWriter.printf("%s-%s-%s-%s-%d-%s-%s-%s\n", emp.getId(), emp.getAccNumber(),
-                            emp.getOwner(), emp.getType(), emp.getBallance(), emp.getBankName(),
-                            emp.getStartDate(), emp.getEndDate());
+                var acc = accounts.get(i);
+                if (!isExist(currentInFile, acc)) {
+                    printWriter.printf("%s-%s-%s-%s-%d-%s-%s-%s\n", acc.getId(), acc.getAccNumber(),
+                            acc.getOwner(), acc.getType(), acc.getBallance(), acc.getBankName(),
+                            acc.getStartDate(), acc.getEndDate());
                 }
             }
             printWriter.close();
