@@ -26,7 +26,7 @@ public class L34Ex3 {
             System.out.println("6. Hiển thị danh sách sinh viên");
             System.out.println("7. Hiển thị danh sách lớp học");
             System.out.println("8. Nhập và tính điểm trung bình cho từng sv trong lớp");
-            System.out.println("9. Xet học lực cho từng sinh viên trong lớp");
+            System.out.println("9. Xét học lực cho từng sinh viên trong lớp");
             System.out.println("10. Tìm xem sinh viên có mã s có trong lớp học nào không");
             System.out.println("0. Thoát chương trình");
             System.out.println("Xin mời bạn chọn: ");
