@@ -25,6 +25,7 @@ public class Student {
     }
 
     public Student(String id) {
+        fullName = new FullName();
         setId(id);
     }
 
@@ -72,6 +73,10 @@ public class Student {
         this.phoneNumber = phoneNumber;
     }
 
+    public static void setNextId(int nextId) {
+        Student.nextId = nextId;
+    }
+
     public String getId() {
         return id;
     }
@@ -97,7 +102,8 @@ public class Student {
      * @param fullName chuỗi kí tự chứa họ và tên đầy đủ
      */
     public void setFullName(String fullName) {
-        var words = fullName.split(" ");
+        // tách từ tại vị trí có 1 hoặc nhiều dấu cách, tab
+        var words = fullName.split("\\s+");
         this.fullName.last = words[0];
         this.fullName.first = words[words.length - 1];
         this.fullName.mid = "";

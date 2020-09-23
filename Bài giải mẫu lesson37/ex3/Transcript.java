@@ -44,6 +44,10 @@ public class Transcript {
         }
     }
 
+    public static void setNextId(int nextId) {
+        Transcript.nextId = nextId;
+    }
+
     public float getGrade1() {
         return grade1;
     }

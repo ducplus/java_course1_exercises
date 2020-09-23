@@ -24,6 +24,7 @@ public class Course {
     }
 
     public Course(String id) {
+        transcriptOfStudents = new ArrayList<>();
         setId(id);
     }
 
@@ -48,6 +49,10 @@ public class Course {
             this.id = "COU" + nextId;
             nextId++;
         }
+    }
+
+    public static void setNextId(int nextId) {
+        Course.nextId = nextId;
     }
 
     public String getName() {
@@ -83,29 +88,57 @@ public class Course {
     }
 
     /**
-     * phương thức cập nhật bảng điểm của sinh viên thứ i trong lớp
+     * phương thức cập nhật bảng điểm của sinh viên mã s trong lớp
      *
      * @param student    sinh viên đã có trong lớp học
      * @param transcript bảng điểm của sv tương ứng
      */
-    public void setTranscriptOfStudents(Student student, Transcript transcript) {
+    public void setTranscriptOfStudent(Student student, Transcript transcript) {
         for (int i = 0; i < transcriptOfStudents.size(); i++) {
-            if (transcriptOfStudents.get(i)
-                    .student.getId().compareTo(student.getId()) == 0) {
-                transcriptOfStudents.get(i).transcript = transcript;
-                break; // xong thì thoát
+            if (transcriptOfStudents.get(i).getStudent().getId()
+                    .compareTo(student.getId()) == 0) {
+                transcriptOfStudents.get(i).setTranscript(transcript);
             }
         }
     }
 
     /**
+     * phương thức tạo mới cặp bảng điểm-sinh viên tương ứng trong danh sách lớp học
+     *
+     * @param student    sinh viên
+     * @param transcript bảng điểm
+     */
+    public void addTranscriptOfStudent(Student student, Transcript transcript) {
+        var tos = new TranscriptOfStudent(student, transcript);
+        tos.courseId = this.id;
+        transcriptOfStudents.add(tos);
+    }
+
+    /**
+     * phương thức lấy bảng điểm của sinh viên tương ứng
+     *
+     * @param studentId mã sinh viên cần lấy bảng điểm
+     * @return bảng điểm của sinh viên nếu sinh viên có trong
+     * danh sách lớp và null nếu sinh viên không tồn tại
+     */
+    public Transcript getTranscriptOfStudent(String studentId) {
+        for (int i = 0; i < transcriptOfStudents.size(); i++) {
+            if (transcriptOfStudents.get(i).getStudent().getId()
+                    .compareTo(studentId) == 0) {
+                return transcriptOfStudents.get(i).getTranscript();
+            }
+        }
+        return null;
+    }
+
+    /**
      * phương thức thêm sinh viên vào một lớp nào đó
-     * chưa thêm bảng điểm vì bảng điểm sẽ cập nhật sau
+     * với một bảng điểm mặc định
      *
      * @param student sinh viên cần thêm vào ds lớp học
      */
     public void addStudentToCourse(Student student) {
-        transcriptOfStudents.add(new TranscriptOfStudent(student, null));
+        transcriptOfStudents.add(new TranscriptOfStudent(student, new Transcript()));
     }
 
     public ArrayList<TranscriptOfStudent> getTranscriptOfStudents() {
@@ -113,6 +146,8 @@ public class Course {
     }
 
     public class TranscriptOfStudent {
+        private String id; // mã của cặp sv-bảng điểm
+        private String courseId;
         private Student student;
         private Transcript transcript;
 
@@ -122,6 +157,32 @@ public class Course {
 
         public TranscriptOfStudent(Student student, Transcript transcript) {
             this.student = student;
+            this.transcript = transcript;
+            this.id = transcript.getId();
+        }
+
+        public TranscriptOfStudent(Student student, Transcript transcript, String courseId) {
+            this(student, transcript);
+            this.courseId = courseId;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getCourseId() {
+            return courseId;
+        }
+
+        public void setCourseId(String courseId) {
+            this.courseId = courseId;
+        }
+
+        public void setStudent(Student student) {
+            this.student = student;
+        }
+
+        public void setTranscript(Transcript transcript) {
             this.transcript = transcript;
         }
 

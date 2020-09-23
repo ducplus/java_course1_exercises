@@ -58,6 +58,10 @@ public class Subject {
         }
     }
 
+    public static void setNextId(int nextId) {
+        Subject.nextId = nextId;
+    }
+
     public String getName() {
         return name;
     }
